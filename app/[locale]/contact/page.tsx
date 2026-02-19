@@ -24,11 +24,55 @@ import {
 export default function ContactPage() {
   const t = useTranslations("contact");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    company: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+      } else {
+        alert("发送失败，请稍后重试");
+      }
+    } catch (error) {
+      console.error("发送失败:", error);
+      alert("发送失败，请稍后重试");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -165,8 +209,11 @@ export default function ContactPage() {
                         <CheckCircle className="h-8 w-8 text-green-600" />
                       </div>
                       <h3 className="text-xl font-semibold mb-2">
-                        {t("form.success")}
+                        留言提交成功！
                       </h3>
+                      <p className="text-muted-foreground text-sm">
+                        我们会尽快与您联系
+                      </p>
                     </motion.div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-5">
@@ -177,6 +224,8 @@ export default function ContactPage() {
                             id="name"
                             placeholder={t("form.name")}
                             required
+                            value={formData.name}
+                            onChange={handleChange}
                           />
                         </div>
                         <div className="space-y-2">
@@ -186,6 +235,8 @@ export default function ContactPage() {
                             type="tel"
                             placeholder={t("form.phone")}
                             required
+                            value={formData.phone}
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -197,11 +248,18 @@ export default function ContactPage() {
                             id="email"
                             type="email"
                             placeholder={t("form.email")}
+                            value={formData.email}
+                            onChange={handleChange}
                           />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="company">{t("form.company")}</Label>
-                          <Input id="company" placeholder={t("form.company")} />
+                          <Input
+                            id="company"
+                            placeholder={t("form.company")}
+                            value={formData.company}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
 
@@ -212,12 +270,19 @@ export default function ContactPage() {
                           placeholder={t("form.message")}
                           rows={5}
                           required
+                          value={formData.message}
+                          onChange={handleChange}
                         />
                       </div>
 
-                      <Button type="submit" className="w-full group" size="lg">
+                      <Button
+                        type="submit"
+                        className="w-full group"
+                        size="lg"
+                        disabled={isLoading}
+                      >
                         <Send className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        {t("form.submit")}
+                        {isLoading ? "发送中..." : t("form.submit")}
                       </Button>
                     </form>
                   )}

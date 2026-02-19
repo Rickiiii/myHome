@@ -30,11 +30,11 @@ export function Navbar() {
   const switchLocale = locale === "zh" ? "en" : "zh";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-16 shrink-0">
+      <div className="container h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+        <Link href="/" className="flex items-center space-x-2 shrink-0">
+          <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent whitespace-nowrap">
             家族企业
           </span>
         </Link>
@@ -83,31 +83,33 @@ export function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px]">
-              <nav className="flex flex-col space-y-4 mt-8">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] p-6">
+              <nav className="flex flex-col space-y-2 mt-8">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-lg font-medium transition-colors hover:text-primary ${
+                    className={`px-4 py-3 rounded-lg text-base font-medium transition-colors hover:bg-muted hover:text-primary ${
                       pathname === item.href
-                        ? "text-primary"
+                        ? "bg-primary/10 text-primary"
                         : "text-muted-foreground"
                     }`}
                   >
                     {item.label}
                   </Link>
                 ))}
-                <div className="pt-4 border-t">
+                <div className="pt-4 mt-4 border-t">
                   <Link
                     href={pathname}
                     locale={switchLocale}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-2 text-muted-foreground hover:text-primary"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-muted-foreground hover:bg-muted hover:text-primary transition-colors"
                   >
-                    <Globe className="h-4 w-4" />
-                    <span>{switchLocale === "zh" ? "中文" : "English"}</span>
+                    <Globe className="h-5 w-5" />
+                    <span className="font-medium">
+                      {switchLocale === "zh" ? "中文" : "English"}
+                    </span>
                   </Link>
                 </div>
               </nav>

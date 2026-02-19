@@ -59,24 +59,24 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-semibold">{t("contact.info.title")}</h3>
+            <h3 className="font-semibold">联系方式</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 text-muted-foreground mt-0.5" />
+                <MapPin className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                  {t("contact.info.address")}
+                  浙江省温州市苍南县钱库镇兴苏路132号
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-muted-foreground" />
+                <Phone className="h-4 w-4 text-muted-foreground shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                  {t("contact.info.phone")}
+                  +86 15869120517
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-muted-foreground" />
+                <Mail className="h-4 w-4 text-muted-foreground shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                  {t("contact.info.email")}
+                  ruijiang616@gmail.com
                 </span>
               </div>
             </div>

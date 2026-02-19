@@ -45,22 +45,12 @@ export default function NonWovenServicesPage() {
   ];
 
   const galleryImages = [
-    {
-      src: "/images/wufangbu/bag-01.png",
-      alt: "无纺布袋产品",
-      span: "col-span-1",
-    },
-    {
-      src: "/images/wufangbu/bag-02.png",
-      alt: "生产车间",
-      span: "col-span-2 row-span-2",
-    },
-    { src: "/images/wufangbu/bag-03.png", alt: "产品展示", span: "col-span-1" },
-    { src: "/images/wufangbu/bag-04.png", alt: "制袋工艺", span: "col-span-1" },
-    { src: "/images/wufangbu/bag-05.png", alt: "生产设备", span: "col-span-2" },
-    { src: "/images/wufangbu/bag-06.png", alt: "成品展示", span: "col-span-1" },
-    { src: "/images/wufangbu/bag-07.png", alt: "质检环节", span: "col-span-1" },
-    { src: "/images/wufangbu/bag-08.png", alt: "包装出货", span: "col-span-1" },
+    { src: "/images/wufangbu/bag-01.png" },
+    { src: "/images/wufangbu/bag-02.png" },
+    { src: "/images/wufangbu/bag-03.png" },
+    { src: "/images/wufangbu/bag-04.png" },
+    { src: "/images/wufangbu/bag-05.png" },
+    { src: "/images/wufangbu/bag-06.png" },
   ];
 
   return (
@@ -104,41 +94,30 @@ export default function NonWovenServicesPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4">产品展示</h2>
+            <h2 className="text-3xl font-bold mb-4">样品展示</h2>
             <p className="text-muted-foreground">
               阿体制袋厂生产实拍与产品图集
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={image.src}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className={`relative overflow-hidden rounded-xl group ${image.span}`}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative overflow-hidden rounded-xl group"
               >
-                <div
-                  className={`relative ${
-                    image.span.includes("row-span")
-                      ? "aspect-square"
-                      : "aspect-[4/3]"
-                  }`}
-                >
+                <div className="relative aspect-square">
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt="样品展示"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-white font-medium text-sm">
-                      {image.alt}
-                    </p>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </motion.div>
             ))}

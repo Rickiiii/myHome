@@ -52,12 +52,12 @@ export default function ButtonServicesPage() {
   ];
 
   const images = [
-    { src: "/images/dingniu/button-01.jpg", alt: "钉纽扣工艺展示" },
-    { src: "/images/dingniu/button-02.jpg", alt: "钉纽扣设备" },
-    { src: "/images/dingniu/button-03.jpg", alt: "纽扣成品展示" },
-    { src: "/images/dingniu/button-04.jpg", alt: "钉纽扣加工" },
-    { src: "/images/dingniu/button-05.jpg", alt: "生产车间" },
-    { src: "/images/dingniu/button-06.jpg", alt: "质检流程" },
+    { src: "/images/dingniu/button-01.jpg" },
+    { src: "/images/dingniu/button-02.jpg" },
+    { src: "/images/dingniu/button-03.jpg" },
+    { src: "/images/dingniu/button-04.jpg" },
+    { src: "/images/dingniu/button-05.jpg" },
+    { src: "/images/dingniu/button-06.jpg" },
   ];
 
   return (
@@ -101,11 +101,11 @@ export default function ButtonServicesPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4">生产实拍</h2>
+            <h2 className="text-3xl font-bold mb-4">样品展示</h2>
             <p className="text-muted-foreground">专业的钉纽扣加工设备与工艺</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
             {images.map((image, index) => (
               <motion.div
                 key={image.src}
@@ -113,20 +113,12 @@ export default function ButtonServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative overflow-hidden rounded-xl group ${
-                  index === 0 ? "col-span-2 md:col-span-2 row-span-2" : ""
-                }`}
+                className="relative overflow-hidden rounded-xl group"
               >
-                <div
-                  className={`relative ${
-                    index === 0
-                      ? "aspect-square md:aspect-[16/10]"
-                      : "aspect-square"
-                  }`}
-                >
+                <div className="relative aspect-square">
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt="样品展示"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
