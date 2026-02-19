@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "title": "Family Business - Button & Non-woven Manufacturing",
+    "description": "Professional button sewing and non-woven fabric manufacturing. Ati Weaving Factory provides high-quality garment accessories solutions."
+  },
+  "nav": {
+    "home": "Home",
+    "buttonService": "Button Services",
+    "nonWovenService": "Non-woven Services",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Craftsmanship · Quality First",
+    "subtitle": "Over 20 years of expertise in button sewing and non-woven manufacturing",
+    "description": "We are a family business with a button sewing workshop and Ati Weaving Factory, providing high-quality garment accessories solutions.",
+    "ctaPrimary": "Our Services",
+    "ctaSecondary": "Contact Us"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Two core businesses to meet your different needs",
+    "button": {
+      "title": "Button Sewing",
+      "description": "Professional button sewing services for all types of garments with exquisite craftsmanship",
+      "features": [
+        "Custom Buttons",
+        "Rapid Sampling",
+        "Batch Production",
+        "Quality Inspection"
+      ]
+    },
+    "nonWoven": {
+      "title": "Non-woven Manufacturing",
+      "description": "Ati Weaving Factory specializes in non-woven products and various types of webbing",
+      "features": [
+        "Non-woven Products",
+        "Various Webbing",
+        "Custom Processing",
+        "Stable Supply"
+      ]
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Family Business, Craftsmanship Heritage",
+    "description": "We are a family business with over 20 years of history, growing from a small workshop to a comprehensive garment accessories supplier with button sewing and non-woven manufacturing.",
+    "story1": {
+      "title": "Button Sewing Workshop",
+      "content": "Our button sewing workshop has rich experience and exquisite craftsmanship, providing quality button sewing services for many garment brands. From manual to mechanized, we always adhere to the principle of quality first."
+    },
+    "story2": {
+      "title": "Ati Weaving Factory",
+      "content": "Ati Weaving Factory focuses on the production of non-woven products and various types of webbing, with advanced production equipment and a professional technical team, providing customers with stable and reliable product supply."
+    },
+    "stats": {
+      "years": "20+",
+      "yearsLabel": "Years Experience",
+      "customers": "100+",
+      "customersLabel": "Partner Clients",
+      "products": "1000+",
+      "productsLabel": "Product Types"
+    }
+  },
+  "advantages": {
+    "title": "Core Advantages",
+    "subtitle": "Why Choose Us",
+    "items": {
+      "quality": {
+        "title": "Quality Assurance",
+        "description": "Strict quality control system ensures every product meets standards"
+      },
+      "delivery": {
+        "title": "Fast Delivery",
+        "description": "Efficient production process delivers your orders on time"
+      },
+      "custom": {
+        "title": "Custom Service",
+        "description": "Personalized custom solutions according to customer needs"
+      },
+      "price": {
+        "title": "Price Advantage",
+        "description": "Factory direct sales provide you with the most competitive prices"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Looking forward to working with you",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company Name",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully! We will contact you soon."
+    },
+    "info": {
+      "title": "Contact Information",
+      "buttonService": "Button Sewing Business",
+      "nonWovenService": "Non-woven Business (Ati Weaving Factory)",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Working Hours",
+      "workHours": "Monday - Saturday 8:00-18:00"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Family Business. All rights reserved.",
+    "slogan": "Craftsmanship · Quality First"
+  }
+}
