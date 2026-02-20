@@ -66,7 +66,7 @@ export default function NonWovenServicesPage() {
           >
             <Badge variant="secondary" className="mb-4">
               <Factory className="h-3 w-3 mr-1" />
-              阿体制袋厂
+              玉体制袋厂
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {t("services.nonWoven.title")}
@@ -96,7 +96,7 @@ export default function NonWovenServicesPage() {
           >
             <h2 className="text-3xl font-bold mb-4">样品展示</h2>
             <p className="text-muted-foreground">
-              阿体制袋厂生产实拍与产品图集
+              玉体制袋厂生产实拍与产品图集
             </p>
           </motion.div>
 
@@ -136,7 +136,7 @@ export default function NonWovenServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">核心优势</h2>
-            <p className="text-muted-foreground">阿体制袋厂专业制造</p>
+            <p className="text-muted-foreground">玉体制袋厂专业制造</p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -180,7 +180,7 @@ export default function NonWovenServicesPage() {
             <Factory className="h-12 w-12 mx-auto mb-6 text-primary" />
             <h2 className="text-3xl font-bold mb-4">需要无纺布或制袋产品？</h2>
             <p className="text-muted-foreground mb-8">
-              阿体制袋厂期待与您的合作，为您提供优质的产品和服务
+              玉体制袋厂期待与您的合作，为您提供优质的产品和服务
             </p>
             <Button asChild size="lg">
               <Link href="/contact">

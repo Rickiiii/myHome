@@ -45,7 +45,7 @@ export default function AboutPage() {
   const milestones = [
     { year: "2000", event: "钉纽扣作坊成立，开始为本地服装厂提供服务" },
     { year: "2008", event: "引进先进设备，扩大生产规模" },
-    { year: "2015", event: "阿体制袋厂成立，业务拓展至无纺布领域" },
+    { year: "2015", event: "玉体制袋厂成立，业务拓展至无纺布领域" },
     { year: "2024", event: "服务客户超过100家，产品种类达1000+" },
   ];
 
